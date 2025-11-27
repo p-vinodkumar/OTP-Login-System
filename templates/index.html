@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Welcome to Enhanced OTP Login System</h2>
+
+<div style="text-align: center; margin: 30px 0;">
+    <p>Secure authentication with multiple methods:</p>
+    <ul style="text-align: left; display: inline-block;">
+        <li>🔑 Password + OTP Authentication</li>
+        <li>📧 Standard Email OTP</li>
+        <li>⏰ Time-based OTP (TOTP)</li>
+        <li>🔒 PBKDF2 Password Hashing</li>
+        <li>🛡️ Fernet Encryption</li>
+    </ul>
+</div>
+
+<div style="text-align: center;">
+    <a href="{{ url_for('login') }}" style="display: inline-block; margin: 10px;">
+        <button type="button">Login</button>
+    </a>
+    <a href="{{ url_for('register') }}" style="display: inline-block; margin: 10px;">
+        <button type="button" style="background: #28a745;">Register</button>
+    </a>
+</div>
+{% endblock %}

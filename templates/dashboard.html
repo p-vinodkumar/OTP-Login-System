@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - OTP Login System{% endblock %}
+
+{% block content %}
+<h2>🎉 Welcome to Dashboard!</h2>
+
+<div style="text-align: center; margin: 30px 0;">
+    <div style="background: #d4edda; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+        <h3>✅ Authentication Successful!</h3>
+        <p><strong>Name:</strong> {{ user.name }}</p>
+        <p><strong>Email:</strong> {{ email }}</p>
+        <p><strong>Status:</strong> <span style="color: #155724;">Verified ✓</span></p>
+    </div>
+    
+    <div style="background: #f8f9fa; padding: 20px; border-radius: 8px;">
+        <h4>🔐 Security Features Active:</h4>
+        <ul style="text-align: left; display: inline-block;">
+            <li>✅ PBKDF2 Password Hashing</li>
+            <li>✅ Fernet Encryption</li>
+            <li>✅ HMAC Authentication</li>
+            <li>✅ Secure Random Generation</li>
+            <li>✅ Multi-factor Authentication</li>
+        </ul>
+    </div>
+</div>
+
+<div style="text-align: center; margin-top: 30px;">
+    <a href="{{ url_for('logout') }}">
+        <button type="button" style="background: #dc3545;">Logout</button>
+    </a>
+</div>
+{% endblock %}

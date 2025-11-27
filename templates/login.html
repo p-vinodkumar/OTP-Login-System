@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Login - OTP Login System{% endblock %}
+
+{% block content %}
+<h2>Login</h2>
+
+<form method="POST">
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="auth_method">Authentication Method:</label>
+        <select id="auth_method" name="auth_method" required>
+            <option value="password_otp">Password + OTP</option>
+            <option value="otp_only">OTP Only</option>
+        </select>
+    </div>
+    
+    <button type="submit">Continue</button>
+</form>
+
+<p style="text-align: center; margin-top: 20px;">
+    Don't have an account? <a href="{{ url_for('register') }}">Register here</a>
+</p>
+{% endblock %}

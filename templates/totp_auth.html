@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}TOTP Authentication{% endblock %}
+
+{% block content %}
+<h2>Time-based OTP (TOTP)</h2>
+
+<div style="margin-bottom: 20px; padding: 15px; background: #e9ecef; border-radius: 4px;">
+    <h4>📱 TOTP Setup:</h4>
+    <p><strong>Secret Key:</strong> <code style="background: #fff; padding: 2px 4px;">{{ secret }}</code></p>
+    <p><strong>Demo TOTP:</strong> <span style="font-size: 18px; font-weight: bold; color: #007bff;">{{ demo_totp }}</span></p>
+    <p style="font-size: 12px; color: #666;">Use this secret in your authenticator app or use the demo TOTP above</p>
+</div>
+
+<form method="POST">
+    <div class="form-group">
+        <label for="totp">Enter 6-digit TOTP:</label>
+        <input type="text" id="totp" name="totp" maxlength="6" pattern="[0-9]{6}" required 
+               style="text-align: center; font-size: 18px; letter-spacing: 2px;">
+    </div>
+    
+    <button type="submit">Verify TOTP</button>
+</form>
+
+<p style="text-align: center; margin-top: 20px;">
+    <a href="{{ url_for('otp_method') }}">← Back to OTP Methods</a>
+</p>
+{% endblock %}

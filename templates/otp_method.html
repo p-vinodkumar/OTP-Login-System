@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Choose OTP Method{% endblock %}
+
+{% block content %}
+<h2>Choose OTP Method</h2>
+
+<form method="POST">
+    <div class="form-group">
+        <label for="otp_type">OTP Type:</label>
+        <select id="otp_type" name="otp_type" required>
+            <option value="standard">📧 Standard OTP (Email)</option>
+            <option value="totp">⏰ Time-based OTP (TOTP)</option>
+        </select>
+    </div>
+    
+    <button type="submit">Continue</button>
+</form>
+
+<div style="margin-top: 20px; padding: 15px; background: #e9ecef; border-radius: 4px;">
+    <h4>OTP Methods:</h4>
+    <p><strong>Standard OTP:</strong> 6-digit code sent to your email (60 seconds validity)</p>
+    <p><strong>TOTP:</strong> Time-based rotating codes (30 seconds validity)</p>
+</div>
+{% endblock %}
